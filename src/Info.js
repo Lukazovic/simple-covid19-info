@@ -42,6 +42,7 @@ function Info() {
   const handleCopyClick = text => {
     if (text) {
       navigator.clipboard.writeText(text);
+      return;
     }
 
     navigator.clipboard.writeText(`Casos Confirmados: ${confirmed} 
