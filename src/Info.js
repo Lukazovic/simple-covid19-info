@@ -40,11 +40,10 @@ function Info() {
   const { confirmed, deaths, recovered, active, updatedAt } = currentBrazilData;
 
   const handleCopyClick = text => {
-    if (text) {
-      navigator.clipboard.writeText(text);
-      return;
-    }
+    navigator.clipboard.writeText(text);
+  };
 
+  const handleCopyAllClick = () => {
     navigator.clipboard.writeText(`Casos Confirmados: ${confirmed} 
       \nCasos Ativos: ${active} 
       \nMortos: ${deaths} 
@@ -110,7 +109,7 @@ function Info() {
               />
             </div>
             <div className="Info-buttons">
-              <button onClick={handleCopyClick}>Copiar</button>
+              <button onClick={handleCopyAllClick}>Copiar</button>
               <button onClick={getData}>Atualizar</button>
             </div>
           </>
